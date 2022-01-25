@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import users from "./MOCK_DATA.json";
 
 interface Props {}
 
 const Index: React.FC<Props> = (props) => {
   const [keyword, setKeyword] = useState("");
+  const [input2, setInput2] = useState("");
   const filteredUsers = users.filter((user) => {
+    console.log("filtering");
     const lowerCaseKeyword = keyword.toLowerCase();
     return (
       user.gender.toLowerCase().includes(lowerCaseKeyword) ||
@@ -15,6 +17,19 @@ const Index: React.FC<Props> = (props) => {
       user.ip_address.toLocaleLowerCase().includes(lowerCaseKeyword)
     );
   });
+  // const filteredUsers = useMemo(() => {
+  //   return users.filter((user) => {
+  //     console.log("filtering");
+  //     const lowerCaseKeyword = keyword.toLowerCase();
+  //     return (
+  //       user.gender.toLowerCase().includes(lowerCaseKeyword) ||
+  //       user.first_name.toLowerCase().includes(lowerCaseKeyword) ||
+  //       user.last_name.toLowerCase().includes(lowerCaseKeyword) ||
+  //       user.gender.toLowerCase().includes(lowerCaseKeyword) ||
+  //       user.ip_address.toLocaleLowerCase().includes(lowerCaseKeyword)
+  //     );
+  //   });
+  // }, [keyword]);
   return (
     <div>
       <h1>Search</h1>
@@ -22,6 +37,13 @@ const Index: React.FC<Props> = (props) => {
         type="text"
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="dummy"
+        value={input2}
+        onChange={(e) => setInput2(e.target.value)}
       />
       <table>
         <tr>
