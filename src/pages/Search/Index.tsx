@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import users from "./MOCK_DATA.json";
 
 interface Props {}
