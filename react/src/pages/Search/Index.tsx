@@ -54,7 +54,8 @@ const Index: React.FC<Props> = (props) => {
           <th>gender</th>
           <th>ip_address</th>
         </tr>
-        {filteredUsers.map((user) => (
+        {filteredUsers.map((user, index) => (
+          // <p key={index}>{user.first_name}</p>
           <tr>
             <td>{user.id}</td>
             <td>{user.first_name}</td>
