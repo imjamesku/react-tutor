@@ -46,6 +46,9 @@ const Sorting: React.FC<Props> = (props) => {
   return (
     <div>
       <h1>test</h1>
+      <a href="https://github.com/imjamesku/react-tutor/blob/main/react/src/pages/Sorting.tsx">
+        程式碼連結
+      </a>
       <h2>日期排序</h2>
       <ul>
         {sortedArr.map((item, idx) => (
